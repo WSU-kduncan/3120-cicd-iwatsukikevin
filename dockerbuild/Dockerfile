@@ -23,8 +23,8 @@
         Use syntax `docker tag IMAGE_ID_HERE CUSTOM_IMAGE_TAG_NAME` to modify new image.
 	You can also use `docker commit CONTAINER_NAME CUSTOM_IMAGE_TAG_NAME` to tag the image.
 8.) Create a new container based on the image we just created:
+	You must first delete the original container (nginx_base) to prevent a port bind conflict. To do this, stop the OG container with `docker stop nginx_base` followed by `docker rm nginx_base`. Success if you use `docker ps -a` and there is no sign of `nginx_base`.
 	Use command `docker run --name NEW_CONTAINER_NAME -d -p 80:80 CUSTOM_IMAGE_TAG_NAME` to create a new container and start simultaneously.
-	Optional: To delete the original container (nginx_base), stop it with `docker stop nginx_base` followed by `docker rm nginx_base`. Success if you use `docker ps -a` and there is no sign of `nginx_base`.
 9.) Check:
 	Look at running containers with `docker ps` and go to `http://localhost`. If you see your custom container in the running containers list and your changes are apparent in the `localhost` web page, you did all the steps correctly.
 	
