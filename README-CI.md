@@ -21,13 +21,12 @@
 - How to build the container from the `Dockerfile`:
   - To create a Dockerfile, use the command `sudo nano Dockerfile` and type in your password.
   - You must then use keywords associated with Dockerfile to create your container and image (keyword list can be found at `https://thenewstack.io/docker-basics-how-to-use-dockerfiles/`).
-  - Use `docker build -t "image_name" .` while in the same directory as the Dockerfile to create an image with a pre-selected container name.
+  - Use `docker build -t "image_name_of_your_choice" .` while in the same directory as the Dockerfile to create an image with a pre-selected container name.
 - How to Run a Container:
   - Use the syntax `docker run -dp 80:80 image_name` to run the container in the detached mode and create a mapping between host' port 80 and container' port 80.
   - Go to `https://docs.docker.com/engine/reference/commandline/run/` or another site for more options and the like.
-  - You can also use `docker run IMAGE_NAME` to start a new container from an image.
-  - `docker start CONTAINER_NAME` to start a container that was stopped with `docker stop CONAINER_NAME`.
+  - You can also use `docker start CONTAINER_NAME` to start a container that was stopped with `docker stop CONAINER_NAME`.
 - How to view the project running in the container:
   - Use the command `docker ps` to check if the container you want to run is running.
-  - To view the running container/project, open a web browse and type in your public IP.
+  - To view the running container/project, open a web browse and type in your public IP or `http://localhost:80`.
   - If you want detailed information on your containers use the command `docker container inspect [OPTIONS] CONTAINER [CONTAINER...]`.
