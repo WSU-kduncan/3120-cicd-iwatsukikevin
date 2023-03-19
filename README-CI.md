@@ -30,4 +30,3 @@
 - How to view the project running in the container:
   - Use the command `docker ps` to check if the container you want to run is running.
   - To view the running container/project, open a web browse and type in `http://localhost:80` (you might need to refresh).
-  - If you want detailed information on your containers use the command `docker container inspect [OPTIONS] CONTAINER [CONTAINER...]`.
