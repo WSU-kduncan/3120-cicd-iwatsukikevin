@@ -1,5 +1,5 @@
 # CI Project Overview
-- The purpose of this project is to learn how to use a set of platforms called "Docker" to create software containers. These containers package code so that applications run efficiently across computing environments, which makes practicing them worthwhile. For this project, we will be using docker commands on Linux command consoles, a GitHub repository unique for this project, and a computer app called "Docker Desktop".
+- The purpose of this project is to learn how to use a set of platforms called "Docker" to create software containers. These containers package code so that applications run efficiently across computing environments, which makes practicing them worthwhile. For this project, we will be using docker commands on Linux command consoles, a GitHub repository unique for this project, port 80 for the containers, and a computer app called "Docker Desktop".
 # Run Project Locally
 - How to install Docker on Linux (help from `https://docs.docker.com/engine/install/ubuntu/`):
   - If you have older versions of Docker on your desktop or instance, you must uninstall them with the command `sudo apt-get remove docker docker-engine docker.io containerd runc`.
@@ -23,3 +23,5 @@
   - Use the syntax `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]` to run AND create a new container from an image.
   - Go to `https://docs.docker.com/engine/reference/commandline/run/` or another site for more options and the like.
 - How to view the project running in the container:
+  - Use the command `docker ps` to check if the container you want to run is running.
+  - To view the running container/project, open a web browse and type in your public IP.
