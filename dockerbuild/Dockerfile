@@ -1,4 +1,4 @@
-#This is my Dockerfile locted in my git repo on my AWS instance
+#This is my Dockerfile.
 #How to build an image with nginx (used dataset.com for assistance)
 #Must use `sudo` to run commands in AWS instance
 1.) Create a base container:
