@@ -22,6 +22,8 @@
 - How to Run a Container:
   - Use the syntax `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]` to run AND create a new container from an image.
   - Go to `https://docs.docker.com/engine/reference/commandline/run/` or another site for more options and the like.
+  - You can also use `docker run IMAGE_NAME` to start a new container from an image.
+  - `docker start CONTAINER_NAME` to start a container that was stopped with `docker stop CONAINER_NAME`.
 - How to view the project running in the container:
   - Use the command `docker ps` to check if the container you want to run is running.
   - To view the running container/project, open a web browse and type in your public IP.
