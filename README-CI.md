@@ -23,7 +23,7 @@
   - You must then use keywords associated with Dockerfile to create your container and image (keyword list can be found at `https://thenewstack.io/docker-basics-how-to-use-dockerfiles/`).
   - Use `docker build -t "image_name" .` while in the same directory as the Dockerfile to create an image with a pre-selected container name.
 - How to Run a Container:
-  - Use the syntax `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]` to run AND create a new container from an image.
+  - Use the syntax `docker run -dp 80:80 image_name` to run the container in the detached mode and create a mapping between host' port 80 and container' port 80.
   - Go to `https://docs.docker.com/engine/reference/commandline/run/` or another site for more options and the like.
   - You can also use `docker run IMAGE_NAME` to start a new container from an image.
   - `docker start CONTAINER_NAME` to start a container that was stopped with `docker stop CONAINER_NAME`.
