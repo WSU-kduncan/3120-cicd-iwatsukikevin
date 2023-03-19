@@ -1,5 +1,6 @@
 #This is my Dockerfile locted in my git repo on my AWS instance
 #How to build an image with nginx (used dataset.com for assistance)
+#Must use `sudo` to run commands in AWS instance
 1.) Create a base container:
         Use the command `docker create --name nginx_base -p 80:80 nginx:alpine` to create a container with the name "nginx_base", the image repository "nginx" and the image tag "alpine".
 2.) Inspect Images:
