@@ -21,7 +21,7 @@
 - How to build the container from the `Dockerfile`:
   - To create a Dockerfile, use the command `sudo nano Dockerfile` and type in your password.
   - You must then use keywords associated with Dockerfile to create your container and image (keyword list can be found at `https://thenewstack.io/docker-basics-how-to-use-dockerfiles/`).
-  - Use `docker build -t "image_name"` to create an image with a pre-selected container name.
+  - Use `docker build -t "image_name" .` while in the same directory as the Dockerfile to create an image with a pre-selected container name.
 - How to Run a Container:
   - Use the syntax `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]` to run AND create a new container from an image.
   - Go to `https://docs.docker.com/engine/reference/commandline/run/` or another site for more options and the like.
