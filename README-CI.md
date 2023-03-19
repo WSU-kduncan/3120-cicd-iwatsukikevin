@@ -9,7 +9,7 @@
     - curl \
     - gnupg \
     - lsb-release`
-  - 
+  - Now, add Docker's official GPG key with `sudo mkdir -m 0755 -p /etc/apt/keyrings` and `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg`
 - How to build the container from the `Dockerfile`:
 - How to Run a Container:
 - How to view the project running in the container:
