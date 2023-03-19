@@ -3,7 +3,7 @@
 # Run Project Locally
 - How to install Docker on Linux (help from `https://docs.docker.com/engine/install/ubuntu/`):
   - If you have older versions of Docker on your desktop or instance, you must uninstall them with the command `sudo apt-get remove docker docker-engine docker.io containerd runc`.
-  - Now, we must set up the Docker repository. This is important if you are installing Docker Engine for the first time on a new host machine:
+  - We must set up the Docker repository. This is important if you are installing Docker Engine for the first time on a new host machine:
     - First, you must updae the `apt` package index with `sudo apt-get update` and install packages to allow apt to use a repository over HTTPS with the following lines:
     - `sudo apt-get install \`
       - `ca-certificates \`
@@ -14,6 +14,10 @@
     - Set up the repository with the following command: `echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
+  - Now, we install the Docker Engine:
+    - Update the `apt` package index with the command `sudo apt-get update`.
+    - Install Docker Engine, containerd, and Docker Compose with command `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`.
+    - If everything is done correctly and there are no unexpected problems, you can test Docker Engine with `sudo docker run hello-world`. This will download a test image and runs it in a container.
 - How to build the container from the `Dockerfile`:
 - How to Run a Container:
 - How to view the project running in the container:
