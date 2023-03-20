@@ -20,7 +20,7 @@
     - If everything is done correctly and there are no unexpected problems, you can test Docker Engine with `sudo docker run hello-world`. This should download a test image and run it in a container.
 - How to build the container from the `Dockerfile`:
   - To create a Dockerfile, use the command `sudo nano Dockerfile` and type in your password.
-  - You must then use keywords associated with Dockerfile to create your container and image (keyword list can be found at `https://thenewstack.io/docker-basics-how-to-use-dockerfiles/`).
+  - You must then use keywords associated with Dockerfile to create your image (keyword list can be found at `https://thenewstack.io/docker-basics-how-to-use-dockerfiles/`).
   - Use `docker build -t "image_name_of_your_choice" .` while in the same directory as the Dockerfile to create an image.
 - How to Run a Container:
   - Use the syntax `docker run -dp 80:80 image_name` to run the container in the detached mode and create a mapping between host' port 80 and container' port 80.
