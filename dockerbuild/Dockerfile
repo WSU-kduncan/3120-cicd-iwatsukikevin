@@ -14,5 +14,3 @@ EXPOSE 80
 #Copy index.html to site content directory
 COPY index.html /usr/share/nginx/html
 
-#Completion message
-RUN echo 'container has been created!'
