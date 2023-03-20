@@ -1,4 +1,4 @@
-#This is my Dockerfile.
+#This is my Dockerfile (edited from local).
 #How to build an image with nginx (used dataset.com for assistance)
 #Must use `sudo` to run commands in AWS instance
 
