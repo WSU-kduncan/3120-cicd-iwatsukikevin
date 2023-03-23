@@ -29,8 +29,19 @@
 ## How to view the project running in the container:
   - Use the command `docker ps` to check if the container you want to run is running.
   - To view the running container/project, open a web browse and type in `http://localhost:80` (you might need to refresh).
-# Create a Public Repository in DockerHub
+## Create a Public Repository in DockerHub
 - After you sign into your DockerHub account, go to “Repositories” at the top of the page.
 - Click on “create repository”.
 - Add a name and description for your repository.
 - Under “visibility”, select the “public” tick dot then “create”.
+## Using CLI (command line interface) and DockerHub Credentials to Authenticate with DockerHub
+- d
+## How to Push Container Images to DockerHub without GitHub Actions
+- dsf
+## Configuring GitHub Secrets
+- How to set a secret:
+- What secrets are set for this project?
+  - Caution: DO NOT copy + paste secret names or else the submission will be denied
+## Behavior of GitHub Workflow
+- What does it do and when?
+- What variables in workflow are custom to your project?
