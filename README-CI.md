@@ -48,7 +48,7 @@
   - Select "Actions" then select "New repository secret"
   - Fill out the boxes (DO NOT copy + paste secret names or else the submission will be denied)
 - What secrets are set for this project?
-  - Caution: DO NOT copy + paste secret names or else the submission will be denied
+  - My DockerHub user name (tagged as DOCKER_USERNAME) and password (tagged as DOCKER_PASSWORD).
 ## Behavior of GitHub Workflow
 - What does it do and when?
 - What variables in workflow are custom to your project?
