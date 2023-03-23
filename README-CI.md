@@ -43,6 +43,10 @@
 - dsf
 ## Configuring GitHub Secrets
 - How to set a secret:
+  - Go to "settings" in the GitHub repository.
+  - Look down the list for "security" and then "Secrets and Variables"
+  - Select "Actions" then select "New repository secret"
+  - Fill out the boxes (DO NOT copy + paste secret names or else the submission will be denied)
 - What secrets are set for this project?
   - Caution: DO NOT copy + paste secret names or else the submission will be denied
 ## Behavior of GitHub Workflow
