@@ -45,7 +45,10 @@
 - Once finsihed, you will then get a prompt telling you how to use your token to login to DockerHub. You will first be required to run a `docker login -u Docker_Username` command. Then you will be prompted to enter a password, which will be randomly generated after creating your token (copy and paste it somewhere!).
 - Note: When entering your password, the characters will not show, but they are there! Just have faith!
 ## How to Push Container Images to DockerHub without GitHub Actions
-- dsf
+- While creating a public docker repo, you might have noticed two commands with the syntax `docker tag local-image:tagname new-repo:tagname` and `docker push new-repo:tagname` off to the right. We will need those!
+- Replace “local-image:tagname” with the name of the image on your local system that you want to upload to your repo, and “new-repo:tagname” with the name of the public repo that you want to upload your image to (tagname is optional for “new-repo”).
+- Type the tag command into WSL2 followed by the push command, using the needed information.
+- You will know you succeeded if you see an image inside your public repo with your tag (assuming you made one for your public repo).
 ## Configuring GitHub Secrets
 - How to set a secret:
   - Go to "settings" in the GitHub repository.
