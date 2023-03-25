@@ -38,7 +38,7 @@
 - Add a name and description for your repository.
 - Under “visibility”, select the “public” tick dot then “create”.
 ## Using CLI (command line interface) and DockerHub Credentials to Authenticate with DockerHub
-- d
+- Recommended Credentials:
 ## How to Push Container Images to DockerHub without GitHub Actions
 - dsf
 ## Configuring GitHub Secrets
