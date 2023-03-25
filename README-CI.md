@@ -38,7 +38,12 @@
 - Add a name and description for your repository.
 - Under “visibility”, select the “public” tick dot then “create”.
 ## Using CLI (command line interface) and DockerHub Credentials to Authenticate with DockerHub
-- Recommended Credentials:
+- Recommended Credentials: I would recommend a token instead of a password because you can revoke a token at any time without the risk of ruining your whole account if someone gets ahold of it.
+- To create a token, go to your account name on DockerHub and click on "Account Settings".
+- Go to Security and click on New Access Token.
+- Fill out the description text box and choose desired permissions.
+- Once finsihed, you will then get a prompt telling you how to use your token to login to DockerHub. You will first be required to run a `docker login -u Docker_Username` command. Then you will be prompted to enter a password, which will be randomly generated after creating your token (copy and paste it somewhere!).
+- Note: When entering your password, the characters will not show, but they are there! Just have faith!
 ## How to Push Container Images to DockerHub without GitHub Actions
 - dsf
 ## Configuring GitHub Secrets
