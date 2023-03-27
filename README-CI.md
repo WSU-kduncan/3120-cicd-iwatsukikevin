@@ -46,7 +46,7 @@
 - Note: When entering your password, the characters will not show, but they are there! Just have faith!
 ## How to Push Container Images to DockerHub without GitHub Actions
 - While creating a public docker repo, you might have noticed two commands with the syntax `docker tag local-image:tagname new-repo:tagname` and `docker push new-repo:tagname` off to the right. We will need those!
-- Replace “local-image:tagname” with the name of the image on your local system that you want to upload to your repo, and “new-repo:tagname” with the name of the public repo that you want to upload your image to.
+- Replace “local-image:tagname” with the name of the image on your local system that you want to upload to your repo, and “new-repo:tagname” with the path of the public repo that you want to upload your image to.
 - Type the tag command into WSL2 followed by the push command, using the needed information.
 - You will know you succeeded if you see an image inside your public repo with your tag (assuming you made one for your public repo).
 ## Configuring GitHub Secrets
@@ -59,4 +59,5 @@
   - My DockerHub user name (tagged as DOCKER_USERNAME) and password (tagged as DOCKER_PASSWORD).
 ## Behavior of GitHub Workflow
 - What does it do and when?
+  - It accesses my DockerHub account using my secrets and uploads an image to the designated public repository. It will run after I use the `git push` command in my Ubuntu terminal.
 - What variables in workflow are custom to your project?
