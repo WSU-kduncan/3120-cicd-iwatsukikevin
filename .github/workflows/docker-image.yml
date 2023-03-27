@@ -11,33 +11,32 @@ name: Publish Docker image
 
 on:
   push: #added
-    branches: [main] #changed to main
+    branches:
+      - 'main'  #changed to main
   workflow-dispatch: #added
 
 jobs:
   push_to_kmiregistry: #edited job title
-    name: Push Docker image to Docker Hub
+    name: Push Kev's Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+
+      - name: Set up QEMU #Emulation support tool for using workflow
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx #tool for creating and booting a builder.
+        uses: docker/setup-buildx-action@v2
       
       - name: Log in to Docker Hub
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       
-      - name: Extract metadata (tags, labels) for Docker
-        id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+      - name: Build and push Kev's Docker image
+        uses: docker/build-push-action@v4
         with:
-          images: iwatsukikevin/kmirepo
-      
-      - name: Build and push Docker image
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
-        with:
-          context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }} iwatsuki/kmitag:1.0
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: iwatsuki/kmirepo:latest
