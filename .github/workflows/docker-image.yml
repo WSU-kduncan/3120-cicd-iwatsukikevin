@@ -29,7 +29,7 @@ jobs:
       - name: Build and push Kev's Docker image
         uses: docker/build-push-action@v4
         with:
-          context: "{{defaultContext}}:dockerbuild"
+          context: "{{defaultContext}}:dockerbuild" #must use the file name containing your Dockerfile for your sub directory.
           push: true
           tags: iwatsukikevin/kmirepo:latest
 
