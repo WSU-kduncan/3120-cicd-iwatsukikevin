@@ -10,11 +10,12 @@
 name: Publish Docker image
 
 on:
-  release:
-    types: [published]
+  push: #edited
+    branches: [main]
+    workflow-dispatch:
 
 jobs:
-  push_to_registry:
+  push_to_kmiregistry: #edited job title
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
