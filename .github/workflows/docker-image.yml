@@ -29,7 +29,7 @@ jobs:
       - name: Build and push Kev's Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: "{{defaultContext}}:/home/iwatsukikevin/CEG3120_1/3120-cicd-iwatsukikevin/dockerbuild"
           push: true
           tags: iwatsukikevin/kmirepo:latest
 
