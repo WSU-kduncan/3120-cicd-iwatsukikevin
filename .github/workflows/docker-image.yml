@@ -7,12 +7,11 @@
 # To get a newer version, you will need to update the SHA.
 # You can also reference a tag or branch, but the action may change without warning.
 
-name: Publish Docker image
+name: Publish Kev's Docker image
 
 on:
-  push: #added
-    branches:
-      - 'main'  #changed to main
+  push: #git command to run action
+    branches: [main]  # brach of focus
   workflow-dispatch: #added
 
 jobs:
@@ -20,6 +19,7 @@ jobs:
     name: Push Kev's Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Kev's message"
       - name: Check out the repo
         uses: actions/checkout@v2
 
@@ -40,3 +40,6 @@ jobs:
         with:
           push: true
           tags: iwatsuki/kmirepo:latest
+
+      - run: ls
+      - run: echo "end of workflow"
