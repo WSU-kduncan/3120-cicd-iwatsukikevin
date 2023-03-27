@@ -59,5 +59,5 @@
   - My DockerHub user name (tagged as DOCKER_USERNAME) and password (tagged as DOCKER_PASSWORD).
 ## Behavior of GitHub Workflow
 - What does it do and when?
-  - It accesses my DockerHub account using my secrets and uploads an image to the designated public repository. 
+  - It accesses my DockerHub account using my secrets and uploads an image to the designated public repository. It will run after I use the `git push` command in my Ubuntu terminal.
 - What variables in workflow are custom to your project?
