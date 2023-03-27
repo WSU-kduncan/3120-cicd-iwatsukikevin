@@ -10,9 +10,9 @@
 name: Publish Docker image
 
 on:
-  push: #edited
-    branches: [main]
-    workflow-dispatch:
+  push: #added
+    branches: [main] #changed to main
+  workflow-dispatch: #added
 
 jobs:
   push_to_kmiregistry: #edited job title

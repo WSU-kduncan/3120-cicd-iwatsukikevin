@@ -12,9 +12,7 @@ MAINTAINER IWATSUKI iwatsuki.2@wright.edu
 EXPOSE 80
 
 #Copy index.html to image/site content directory
-COPY . /usr/share/nginx/html
-<<<<<<< HEAD
-=======
+COPY . /usr/share/nginx/html 
 #Can use `.` instead of `index.html` to grab all files for the site.
->>>>>>> d33f883e995c5e2eeb34d8371c2e059dd81a482e
+
 
