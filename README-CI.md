@@ -64,4 +64,4 @@
 - What variables in workflow are custom to your project?
   - I have my own username and password (token password from DockerHub) that I placed in secrets (refer to the "Configuring GitHub Secrets" block for how to get there). Secrets can be edited.
   - In the build-push action block, I used a folder I created ("dockerbuild") for a context line so my workflow will know where my Dockerfile is.
-  - Also, in my build-push action block, I used my dockerHub username and one of my public repos to tell my workflow file where to push the image it built. 
+  - Also, in my build-push action block, I used my dockerHub username and one of my public repos to tell my workflow file where to push the image it built (`tags: iwatsukikevin/kmirepo:latest`). 
