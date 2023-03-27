@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: iwatsuki/kmirepo:latest
+          tags: iwatsukikevin/kmirepo:latest
 
       - run: ls
       - run: echo "end of workflow"
