@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Kev's message"
-        # - name: Check out the repo
-        # uses: actions/checkout@v2
 
       - name: Set up QEMU #Emulation support tool for using workflow
         uses: docker/setup-qemu-action@v2
