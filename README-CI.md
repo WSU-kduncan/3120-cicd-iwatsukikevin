@@ -33,6 +33,7 @@
 ### How to view the project running in the container:
   - Use the command `docker ps` to check if the container you want to run is running.
   - To view the running container/project, open a web browse and type in `http://localhost:80` (you might need to refresh).
+  - ![Kev_container_image](https://github.com/WSU-kduncan/3120-cicd-iwatsukikevin/blob/main/website/My%20website.PNG)
 ## Create a Public Repository in DockerHub
 - Create a DockerHub account if you haven't already.
 - After you sign into your DockerHub account, go to “Repositories” at the top of the page.
