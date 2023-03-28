@@ -66,3 +66,5 @@
   - For my login action block, I use my own username and password (token password from DockerHub) that I placed in my secrets (refer to the "Configuring GitHub Secrets" block for how to get there). Secrets can be edited.
   - In the build-push action block, I used a folder I created ("dockerbuild") for a context line so my workflow will know where my Dockerfile is.
   - Also, in my build-push action block, I used my dockerHub username and one of my public repos to tell my workflow file where to push the image it built (`tags: iwatsukikevin/kmirepo:latest`). 
+# Diagram of My Continuous Integration Process
+- ![Name_of_image](Image_URL)
