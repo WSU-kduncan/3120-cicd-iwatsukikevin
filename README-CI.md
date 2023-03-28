@@ -21,6 +21,7 @@
     - Update the `apt` package index with the command `sudo apt-get update`.
     - Install Docker Engine, containerd, and Docker Compose with command `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`.
     - If everything is done correctly and there are no unexpected problems, you can test Docker Engine with `sudo docker run hello-world`. This should download a test image and run it in a container.
+    - It is also highly recommended you download the `Docker Desktop` app. When you sign into the app, you should be able to use docker commands in your `Linux` app.
 ### How to build the container from the `Dockerfile`:
   - To create a Dockerfile, use the command `sudo nano Dockerfile` and type in your password.
   - You must then use keywords associated with Dockerfile to create your image (keyword list can be found at `https://thenewstack.io/docker-basics-how-to-use-dockerfiles/`).
