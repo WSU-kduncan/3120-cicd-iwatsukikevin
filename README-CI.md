@@ -68,4 +68,4 @@
   - In the build-push action block, I used a folder I created ("dockerbuild") for a context line so my workflow will know where my Dockerfile is.
   - Also, in my build-push action block, I used my dockerHub username and one of my public repos to tell my workflow file where to push the image it built (`tags: iwatsukikevin/kmirepo:latest`). 
 # Diagram of My Continuous Integration Process
-- ![Name_of_image](Image_URL)
+- ![Name_of_image](https://github.com/WSU-kduncan/3120-cicd-iwatsukikevin/blob/main/images/Project%204%20Continuous%20Integration%20Process%20Diagram.PNG)
