@@ -42,7 +42,7 @@ jobs:
         with:
           context: "{{defaultContext}}:dockerbuild"
           push: true
-          tags: iwatsukikevin/kmirepo:latest
+          tags: iwatsukikevin/kmirepo:v*.*.*
 
       - run: ls
       - run: echo "end of workflow"
