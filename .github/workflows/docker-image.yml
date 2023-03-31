@@ -43,7 +43,7 @@ jobs:
         with:
           context: "{{defaultContext}}:dockerbuild" #must use the file name containing your Dockerfile for your sub directory.
           push: true
-          tags: iwatsukikevin/kmirepo:v*.*.*
+          tags: iwatsukikevin/kmirepo:latest
 
       - run: ls
       - run: echo "end of workflow"
