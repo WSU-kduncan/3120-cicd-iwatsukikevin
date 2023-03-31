@@ -21,6 +21,7 @@
     - Update the `apt` package index with the command `sudo apt-get update`.
     - Install Docker Engine, containerd, and Docker Compose with command `sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`.
     - If everything is done correctly and there are no unexpected problems, you can test Docker Engine with `sudo docker run hello-world`. This should download a test image and run it in a container.
+    - It is also highly recommended you download the `Docker Desktop` app. When you sign into the app, you should be able to use docker commands in your `Linux` app.
 ### How to build the container from the `Dockerfile`:
   - To create a Dockerfile, use the command `sudo nano Dockerfile` and type in your password.
   - You must then use keywords associated with Dockerfile to create your image (keyword list can be found at `https://thenewstack.io/docker-basics-how-to-use-dockerfiles/`).
@@ -32,7 +33,9 @@
 ### How to view the project running in the container:
   - Use the command `docker ps` to check if the container you want to run is running.
   - To view the running container/project, open a web browse and type in `http://localhost:80` (you might need to refresh).
+  - ![Kev_container_image](https://github.com/WSU-kduncan/3120-cicd-iwatsukikevin/blob/main/website/My%20website.PNG)
 ## Create a Public Repository in DockerHub
+- Create a DockerHub account if you haven't already.
 - After you sign into your DockerHub account, go to “Repositories” at the top of the page.
 - Click on “create repository”.
 - Add a name and description for your repository.
@@ -59,5 +62,11 @@
   - My DockerHub user name (tagged as DOCKER_USERNAME) and password (tagged as DOCKER_PASSWORD).
 ## Behavior of GitHub Workflow
 - What does it do and when?
-  - It accesses my DockerHub account using my secrets and uploads an image to the designated public repository. It will run after I use the `git push` command in my Ubuntu terminal.
+  - My workflow accesses my DockerHub account using my secrets (dockerhub username and password (token version)), builds an image with my Dockerfile in GitHub, and uploads an image to the designated public repository on DockerHub. 
+  - It will run after I use the `git commit -a -m "comment"` and `git push` commands in my Linux terminal.
 - What variables in workflow are custom to your project?
+  - For my login action block, I use my own username and password (token password from DockerHub) that I placed in my secrets (refer to the "Configuring GitHub Secrets" block for how to get there). Secrets can be edited.
+  - In the build-push action block, I used a folder I created ("dockerbuild") for a context line so my workflow will know where my Dockerfile is.
+  - Also, in my build-push action block, I used my dockerHub username and one of my public repos to tell my workflow file where to push the image it built (`tags: iwatsukikevin/kmirepo:latest`). 
+# Diagram of My Continuous Integration Process
+- ![Name_of_image](https://github.com/WSU-kduncan/3120-cicd-iwatsukikevin/blob/main/images/Project%204%20Continuous%20Integration%20Process%20Diagram.PNG)
