@@ -2,7 +2,7 @@ name: Publish Kev's Docker image
 
 on:
   push: #git command to run workflow
-    branches: [main]  # brach of focus
+    branches: [main]  # branch of focus
     workflow-dispatch: #added
     tags:
       - "v*.*.*"
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Kev's message"
-<<<<<<< HEAD
+
         # - name: Check out the repo
         # uses: actions/checkout@v2
       - name: collecting tag data
@@ -25,8 +25,6 @@ jobs:
           tags: |
             type=semver,pattern={{major}}
             type=semver,pattern={{major}}.{{minor}}
-=======
->>>>>>> f5c7a37e6d8a1cd0bb720b6780386d0eb3ecaa2d
 
       - name: Set up QEMU #Emulation support tool for using workflow
         uses: docker/setup-qemu-action@v2
