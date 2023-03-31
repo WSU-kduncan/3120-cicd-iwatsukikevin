@@ -1,9 +1,11 @@
 name: Publish Kev's Docker image
 
 on:
-  push: #git command to run action
+  push: #git command to run workflow
     branches: [main]  # brach of focus
     workflow-dispatch: #added
+    tags:
+      - "v*.*.*"
 
 jobs:
   push_to_kmiregistry: #edited job title
@@ -13,6 +15,15 @@ jobs:
       - run: echo "Kev's message"
         # - name: Check out the repo
         # uses: actions/checkout@v2
+      - name: collecting tag data
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            iwatsukikevin/kmirepo
+          tags: |
+            type=semver,pattern={{major}}
+            type=semver,pattern={{major}}.{{minor}
 
       - name: Set up QEMU #Emulation support tool for using workflow
         uses: docker/setup-qemu-action@v2
