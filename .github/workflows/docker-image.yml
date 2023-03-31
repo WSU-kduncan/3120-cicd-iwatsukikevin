@@ -16,12 +16,13 @@ jobs:
 
         # - name: Check out the repo
         # uses: actions/checkout@v2
+
       - name: collecting tag data
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: |
-            iwatsukikevin/kmirepo
+            iwatsukikevin/sonic_image
           tags: |
             type=semver,pattern={{major}}
             type=semver,pattern={{major}}.{{minor}}
@@ -43,7 +44,7 @@ jobs:
         with:
           context: "{{defaultContext}}:dockerbuild" #must use the file name containing your Dockerfile for your sub directory.
           push: true
-          tags: iwatsukikevin/kmirepo:latest
+          tags: iwatsukikevin/sonic_image:latest
 
       - run: ls
       - run: echo "end of workflow"
