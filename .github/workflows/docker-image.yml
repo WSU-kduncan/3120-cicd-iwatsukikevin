@@ -23,7 +23,7 @@ jobs:
             iwatsukikevin/kmirepo
           tags: |
             type=semver,pattern={{major}}
-            type=semver,pattern={{major}}.{{minor}
+            type=semver,pattern={{major}}.{{minor}}
 
       - name: Set up QEMU #Emulation support tool for using workflow
         uses: docker/setup-qemu-action@v2
