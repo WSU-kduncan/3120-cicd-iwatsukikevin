@@ -16,5 +16,5 @@
 ## Behavior of My GitHub Workflow
 - What does the workflow do? = It allows you to build and push multiple docker images to DockerHub based on your tag input + latest version.
 - When does it do it? = It does it when you push your tag to GitHub, but you must follow the instuctions under "How to generate a `tag` in `git`/GitHub" first.
-## Link to my Docker Hub Repo (pushed image with tag `v2.1.0`)
+## Link to my Docker Hub Repo 
 - https://hub.docker.com/repository/docker/iwatsukikevin/kmirepo/general
