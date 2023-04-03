@@ -18,3 +18,19 @@
 - When does it do it? = It does it when you push your tag to GitHub, but you must follow the instuctions under "How to generate a `tag` in `git`/GitHub" first.
 ## Link to my Docker Hub Repo 
 - https://hub.docker.com/repository/docker/iwatsukikevin/kmirepo/general
+## How to install Docker on an AWS Instance
+- d
+## Container restart script
+- What does it do and why do we need it?
+- Where it should be on server if someone wanted to use my setup
+## Setting up a `webhook` on the server
+- How to install `adnah's webhook` to server
+- How to start the webhook
+## `webhook` task definition file
+- What does it do?
+- Where it should be on server if someone wanted to use my setup
+## How to configure GitHub OR DockerHub to message the listener
+- d
+## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
+- d
+## Diagram of Continuous Deployment Process.
