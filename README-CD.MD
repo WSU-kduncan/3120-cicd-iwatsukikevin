@@ -6,8 +6,8 @@
 - Why am I doing it? = Allows us to learn how to create multiple images/websites when a certain event occurs (pushing to GitHub in this case). This is a very efficent process since this is like making a lot of things happen at once with the push of a button. Semantic versioning also allows us to retrieve and save images from previous versions identified by the tags. Also, thanks to webhooks, we will know right away if an image is created without us having to go to our DockerHub repo and check ourselves.
 - What tools am I using? = DockerHub, GitHub, semantic versioning, webhooks, listeners, WSL2 (Linux), AWS instance(s)
 ## How to generate a `tag` in `git`/GitHub
-- First, you must make a workflow designed to connect to GitHub and add a tags of your choosing (metadata block and a `tags` block under the `push` (action) block).
-- Second, you must make sure the local and remote git repositories are synced, otherwise the workflow will not be able to find the Dockerfile.
+- First, you must make a workflow designed to connect to GitHub and add a tag of your choosing (metadata block and a `tags` block under the `push` (action) block).
+- Second, you must make sure the local and remote git repositories are synced (particularlly the `workflows` files), otherwise the workflow will not be able to find the Dockerfile.
 - Next use the commands in the following order:
   - `git commit -am "comment"`
   - `git tag -a v*.*.*` where the `*` are your desired version numbers (possible to do because of the workflow tags setup).
