@@ -18,8 +18,14 @@
 - When does it do it? = It does it when you push your tag to GitHub, but you must follow the instuctions under "How to generate a `tag` in `git`/GitHub" first.
 ## Link to my Docker Hub Repo 
 - https://hub.docker.com/repository/docker/iwatsukikevin/kmirepo/general
-## How to install Docker on an AWS Instance
-- d
+## How to install Docker on an AWS Instance (help from workfall.com)
+- First, login to your instance (ssh for me)
+- Update the installed packages and package cache on your instance with `sudo yum update -y`.
+- Install the most recent Docker Engine package with `sudo amazon-linux-extras install docker`.
+- Start the Docker service with `sudo service docker start`.
+- Add the ec2-user to the docker group so you can execute Docker commands without using sudo with `sudo usermod -a -G ec2-user`.
+- Log out and log back in to acquire new docker group permissions. Your new session will have the appropriate docker group permissions.
+- If you did everything correctly, the command `docker info` should work and show client and server (containers, running,...) data.  
 ## Container restart script
 - What does it do and why do we need it?
 - Where it should be on server if someone wanted to use my setup
