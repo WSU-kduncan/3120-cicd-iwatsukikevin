@@ -43,7 +43,10 @@
 - What does it do?
 - Where it should be on server if someone wanted to use my setup
 ## How to configure GitHub OR DockerHub to message the listener
-- d
+- GitHub:
+  - If you haven't already, use the command `npm install -g github-listener` to install the command that can detect hooks from Github when a repo is pushed.
+  - You must then create a JSON or YAML file to tell the server what commands are run and the secret used in the Github hook.
+- DockerHub:
 ## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
 - d
 ## Diagram of Continuous Deployment Process.
