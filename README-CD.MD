@@ -26,9 +26,9 @@
 - Add the ec2-user to the docker group so you can execute Docker commands without using sudo with `sudo usermod -a -G ec2-user`.
 - Log out and log back in to acquire new docker group permissions. Your new session will have the appropriate docker group permissions.
 - If you did everything correctly, the command `docker info` should work and show client and server (containers, running,...) data.  
-## Container restart script
-- What does it do and why do we need it? = The script pulls a new image from Dockerhub, places it in a container, and restarts the container. This script is necessary because...
-- Where it should be on server if someone wanted to use my setup? 
+## Container restart script 
+- What does it do and why do we need it? = The script pulls a new image from Dockerhub, places it in a container, and restarts the container. This script is necessary because it reduces the frequency of automatic shutdowns or prevents them entirely. This will ensure automatic updates for our containers and images.
+- Where it should be on server (DockerHub) if someone wanted to use my setup:
 ## Setting up a `webhook` on the server
 - How to install `adnah's webhook` to server:
   - First, make sure `Go` 1.14 or newer is set up then run `go build github.com/adnanh/webhook`.
