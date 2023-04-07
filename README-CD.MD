@@ -45,8 +45,12 @@
 - Where it should be on my instance if someone wanted to use my setup: 
 ## How to configure GitHub OR DockerHub to message the listener
 - GitHub:
-  - If you haven't already, use the command `npm install -g github-listener` to install the command that can detect hooks from Github when a repo is pushed.
-  - You must then create a JSON or YAML file to tell the server what commands are run and the secret used in the Github hook.
+  - Go to settings on your repository.
+  - Go to `Webhooks` under `Code and automation`
+  - Click on `add webhook` 
+  - Enter your password, if applicable.
+  - Fill out the text boxes with the appropriate information and choose the desired settings.
+  - Click `add webhook` when you are done.
 - DockerHub:
 ## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
 - Click on `windows key` then `alt` then `R` and hold until recording widget appears.
