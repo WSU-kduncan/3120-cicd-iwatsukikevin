@@ -52,6 +52,9 @@
   - Fill out the text boxes with the appropriate information and choose the desired settings.
   - Click `add webhook` when you are done.
 - DockerHub:
+  - Go to your public repository.
+  - Click on `Webhooks` and fill out the text lines with the appropriate information.
+  - Click `Create` when finished.
 ## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
 - Click on `windows key` then `alt` then `R` and hold until recording widget appears.
 - When you are done, click the `stop` icon.
