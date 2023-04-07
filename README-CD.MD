@@ -27,7 +27,7 @@
 - Log out and log back in to acquire new docker group permissions. Your new session will have the appropriate docker group permissions.
 - If you did everything correctly, the command `docker info` should work and show client and server (containers, running,...) data.  
 ## Container restart script (restart.sh)
-- What does it do and why do we need it? = The script stops my site container, removes it, then pulls the latest version of a new image from Dockerhub, places it in a container, and runs the container. This script is necessary because it reduces how many commands we will need to input to update our images and containers.
+- What does it do and why do we need it? = The script stops my site container, removes it, then pulls the latest version of a new image from Dockerhub, places it in a container and then runs the container. This script is necessary because it reduces how many commands we will need to use to update our images and containers.
 - Where it should be on my instance (server) if someone wanted to use my setup: In my home directory (make sure it is public).
 ## Setting up a `webhook` on the server
 - How to install `adnah's webhook` to server:
@@ -51,5 +51,9 @@
 ## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
 - Click on `windows key` then `alt` then `R` and hold until recording widget appears.
 - When you are done, click the `stop` icon.
-- g
+- Bring up the game menu with `windows key` + `G`.
+- Click on the `Widget Menu` at the top of the screen and go to `gallery` on the dropdown menu.
+- Your video recording might take a while to load.
+- `link to video here`
 ## Diagram of Continuous Deployment Process.
+- !(image_name)[url]
