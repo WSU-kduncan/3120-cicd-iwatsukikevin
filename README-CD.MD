@@ -27,8 +27,8 @@
 - Log out and log back in to acquire new docker group permissions. Your new session will have the appropriate docker group permissions.
 - If you did everything correctly, the command `docker info` should work and show client and server (containers, running,...) data.  
 ## Container restart script
-- What does it do and why do we need it?
-- Where it should be on server if someone wanted to use my setup
+- What does it do and why do we need it? = The script pulls a new image from Dockerhub, places it in a container, and restarts the container. This script is necessary because...
+- Where it should be on server if someone wanted to use my setup? 
 ## Setting up a `webhook` on the server
 - How to install `adnah's webhook` to server
 - How to start the webhook
