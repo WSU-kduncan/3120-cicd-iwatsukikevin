@@ -30,8 +30,11 @@
 - What does it do and why do we need it? = The script pulls a new image from Dockerhub, places it in a container, and restarts the container. This script is necessary because...
 - Where it should be on server if someone wanted to use my setup? 
 ## Setting up a `webhook` on the server
-- How to install `adnah's webhook` to server
-- How to start the webhook
+- How to install `adnah's webhook` to server:
+  - First, make sure `Go` 1.14 or newer is set up then run `go build github.com/adnanh/webhook`.
+  - I use `Ubuntu`, so I must install webhook with the command `sudo apt-get install webhook`.
+- How to start the webhook:
+  - d
 ## `webhook` task definition file
 - What does it do?
 - Where it should be on server if someone wanted to use my setup
