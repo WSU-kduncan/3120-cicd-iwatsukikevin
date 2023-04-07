@@ -31,11 +31,12 @@
 - Where it should be on server (DockerHub) if someone wanted to use my setup:
 ## Setting up a `webhook` on the server
 - How to install `adnah's webhook` to server:
-  - First, make sure `Go` 1.14 or newer is set up then run `go build github.com/adnanh/webhook`.
+  - First, if applicable, make sure `Go` 1.14 or newer is set up then run `go build github.com/adnanh/webhook` (building from source).
   - I use `Ubuntu`, so I must install webhook with the command `sudo apt-get install webhook`.
 - How to start the webhook:
   - You must first define some hooks you want `webhook` to serve with either JSON or YAML configuration files.
   - Create an empty file with the appropriate extension. This file will contain an array of hooks `webhook` will serve.
+  - The hooks file should have a line for and `id`, and `execute-command` and a `command-working-directory`.
   - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!/bin/sh` at the top of your executable file.
   - After you successfully create your hook file, run webhook using the syntax `/path/to/webhook -hooks hooks.extension -verbose`.
   - The webhook will start up on default port 9000 and will provide you with one HTTP endpoint (ex. `http://yourserver:9000/hooks/redeploy-webhook`)
