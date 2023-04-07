@@ -34,20 +34,22 @@
   - First, if applicable, make sure `Go` 1.14 or newer is set up then run `go build github.com/adnanh/webhook` (building from source).
   - I use `Ubuntu`, so I must install webhook with the command `sudo apt-get install webhook`.
 - How to start the webhook:
-  - You must first define some hooks you want `webhook` to serve with either JSON or YAML configuration files.
+  - You must first define some hooks you want `webhook` to serve with either JSON or YAML configuration files (Professor said use JSON).
   - Create an empty file with the appropriate extension. This file will contain an array of hooks `webhook` will serve.
   - The hooks file should have a line for and `id`, and `execute-command` and a `command-working-directory`.
   - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file.
   - After you successfully create your hook file, run webhook using the syntax `/path/to/webhook -hooks hooks.extension -verbose`.
   - The webhook will start up on default port 9000 and will provide you with one HTTP endpoint (ex. `http://yourserver:9000/hooks/redeploy-webhook`)
 ## `webhook` task definition file
-- What does it do?
-- Where it should be on server if someone wanted to use my setup
+- What does my webhook do?
+- Where it should be on my instance if someone wanted to use my setup: 
 ## How to configure GitHub OR DockerHub to message the listener
 - GitHub:
   - If you haven't already, use the command `npm install -g github-listener` to install the command that can detect hooks from Github when a repo is pushed.
   - You must then create a JSON or YAML file to tell the server what commands are run and the secret used in the Github hook.
 - DockerHub:
 ## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
-- d
+- Click on `windows key` then `alt` then `R` and hold until recording widget appears.
+- When you are done, click the `stop` icon.
+- g
 ## Diagram of Continuous Deployment Process.
