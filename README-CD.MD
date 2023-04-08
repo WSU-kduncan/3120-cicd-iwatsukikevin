@@ -37,7 +37,7 @@
   - You must first define some hooks you want `webhook` to serve with either JSON or YAML configuration files (Professor said use JSON).
   - Create an empty file with the appropriate extension. This file will contain an array of hooks `webhook` will serve.
   - The hooks file should have a line for and `id`, and `execute-command` and a `command-working-directory`.
-  - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file.
+  - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file!).
   - After you successfully create your hook file, run webhook using the syntax `/path/to/webhook -hooks hooks.extension -verbose`.
   - The webhook will start up on default port 9000 and will provide you with one HTTP endpoint (ex. `http://yourserver:9000/hooks/redeploy-webhook`)
 ## `webhook` task definition file
