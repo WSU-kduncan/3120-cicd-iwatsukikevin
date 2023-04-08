@@ -29,21 +29,21 @@
 ## Container restart script (restart.sh)
 - What does it do and why do we need it? = The script stops my site container, removes it, then pulls the latest version of a new image from Dockerhub, places it in a container and then runs the container. This script is necessary because it reduces how many commands we will need to use to update our images and containers.
 - Where it should be on my instance (server) if someone wanted to use my setup: In my home directory (make sure it is public).
-## Setting up a `webhook` on the server
+## Setting up a `webhook` on the server (branched to different sources when making this block)
 - How to install `adnah's webhook` to server:
   - First, if applicable, make sure `Go` 1.14 or newer is set up then run `go build github.com/adnanh/webhook` (building from source).
   - I use `Ubuntu`, so I must install webhook with the command `sudo apt-get install webhook`.
 - How to start the webhook:
-  - You must first define some hooks you want `webhook` to serve with either JSON or YAML configuration files (Professor said use JSON).
-  - Create an empty file with the appropriate extension. This file will contain an array of hooks `webhook` will serve.
-  - The hooks file should have a line for and `id`, and `execute-command` and a `command-working-directory`.
+  - You must first define some hooks you want `webhook` to serve with JSON format.
+  - Create an empty file in `/etc/webhook.conf`. This file will contain an array of hooks `webhook` will serve.
+  - The hooks file should have a line for an `id`, an `execute-command` and a `command-working-directory`.
   - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file!).
-  - After you successfully create your hook file, run webhook using the syntax `/path/to/webhook -hooks hooks.extension -verbose`.
-  - The webhook will start up on default port 9000 and will provide you with one HTTP endpoint (ex. `http://yourserver:9000/hooks/json-file-id`)
+  - After you successfully create and save your hook file, run webhook manually using the syntax `webhook -hooks /etc/webhook.conf -verbose`.
+  - The webhook will start up on default port tcp/9000 and will provide you with one HTTP endpoint (ex. `http://yourserver:9000/hooks/json-file-id`)
 ## `webhook` task definition file
 - What does my webhook do?
 - Where it should be on my instance if someone wanted to use my setup: 
-## How to configure GitHub OR DockerHub to message the listener
+## How to Configure GitHub OR DockerHub to Message the Listener (payloads)
 - GitHub:
   - Go to settings on your repository.
   - Go to `Webhooks` under `Code and automation`
