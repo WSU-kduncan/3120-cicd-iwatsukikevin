@@ -28,10 +28,9 @@
 - If you did everything correctly, the command `docker info` should work and show client and server (containers, running,...) data.  
 ## Container restart script (restart.sh)
 - What does it do and why do we need it? = The script stops my site container, removes it, then pulls the latest version of a new image from Dockerhub, places it in a container and then runs the container. This script is necessary because it reduces how many commands we will need to use to update our images and containers.
-- Where it should be on my instance (server) if someone wanted to use my setup: In my home directory (make sure it is public).
+- Where it should be on my instance (server) if someone wanted to use my setup: In my `/home/ubuntu` directory (make sure the directory is public and the script is executable by user `chmod u+x restart.sh`).
 ## Setting up a `webhook` on the server (branched to different sources when making this block)
 - How to install `adnah's webhook` to server:
-  - First, if applicable, make sure `Go` 1.14 or newer is set up then run `go build github.com/adnanh/webhook` (building from source).
   - I use `Ubuntu`, so I must install webhook with the command `sudo apt-get install webhook`.
 - How to start the webhook:
   - You must first define some hooks you want `webhook` to serve with JSON format.
@@ -39,12 +38,12 @@
   - The hooks file should have a line for an `id`, an `execute-command` and a `command-working-directory`.
   - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file!).
   - After you successfully create and save your hook file, run webhook manually using the syntax `webhook -hooks /etc/webhook.conf -verbose` and the instance terminal should be in "listener mode". 
-  - Check webhook status with `sudo systemctl status webhook.service`
-  - The webhook will start up on default port tcp/9000 and will provide you with one HTTP endpoint (ex. `http://yourserverIP:9000/hooks/webhook-file-id`)
+  - Note: You can check webhook status with `sudo systemctl status webhook.service` while in another instance terminal.
+  - The webhook will start up on default port tcp/9000 and will provide you with one HTTP endpoint.
   - Next, Go to another linux terminal that is outside of the AWS instance and use the command `curl http://yourserverIP:9000/hooks/webhook-file-id`. If successfull, some information should appear on the instance terminal.
 ## `webhook` task definition file
-- What does my webhook do?
-- Where it should be on my instance if someone wanted to use my setup: 
+- What does my webhook do? - When you activate the webhook, it will enter listener mode. When the command `curl http://yourserverIP:9000/hooks/webhook-file-id` is invoked on a terminal other than the one containing the webhook, it will invoke the `restart.sh` file. This will stop and remove an existing container and pull and run the latest image as a container named "whatever is specified in `restart.sh`". The webhook will then display the information of what happened when `restart.sh` was invoked so we will know if there were any problems or if we just want to see what is going on.
+- Where it should be on my instance if someone wanted to use my setup: The webhook file should be located in the file `/etc/webhook.conf` because of how the downloaded webhook app is written.
 ## How to Configure GitHub OR DockerHub to Message the Listener (payloads)
 - GitHub:
   - Go to settings on your repository.
