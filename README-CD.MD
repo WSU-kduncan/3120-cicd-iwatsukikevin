@@ -38,9 +38,10 @@
   - Create an empty file in `/etc/webhook.conf`. This file will contain an array of hooks `webhook` will serve.
   - The hooks file should have a line for an `id`, an `execute-command` and a `command-working-directory`.
   - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file!).
-  - After you successfully create and save your hook file, run webhook manually using the syntax `webhook -hooks /etc/webhook.conf -verbose`.
+  - After you successfully create and save your hook file, run webhook manually using the syntax `webhook -hooks /etc/webhook.conf -verbose` and the instance terminal should be in "listener mode". 
   - Check webhook status with `sudo systemctl status webhook.service`
-  - The webhook will start up on default port tcp/9000 and will provide you with one HTTP endpoint (ex. `http://yourserver:9000/hooks/json-file-id`)
+  - The webhook will start up on default port tcp/9000 and will provide you with one HTTP endpoint (ex. `http://yourserverIP:9000/hooks/webhook-file-id`)
+  - Next, Go to another linux terminal that is outside of the AWS instance and use the command `curl http://yourserverIP:9000/hooks/webhook-file-id`. If successfull, some information should appear on the instance terminal.
 ## `webhook` task definition file
 - What does my webhook do?
 - Where it should be on my instance if someone wanted to use my setup: 
