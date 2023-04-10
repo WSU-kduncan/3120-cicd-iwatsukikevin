@@ -19,35 +19,37 @@
 ## Link to my Docker Hub Repo 
 - https://hub.docker.com/repository/docker/iwatsukikevin/kmirepo/general
 ## How to install Docker on an AWS Instance (help from workfall.com)
+- I could not remember how I installed Docker on my instance before, so I used the following steps:
 - First, login to your instance (ssh for me)
 - Update the installed packages and package cache on your instance with `sudo yum update -y`.
 - Install the most recent Docker Engine package with `sudo amazon-linux-extras install docker`.
 - Start the Docker service with `sudo service docker start`.
+- The next few lines are optional:
 - Add the ec2-user to the docker group so you can execute Docker commands without using sudo with `sudo usermod -a -G ec2-user`.
 - Log out and log back in to acquire new docker group permissions. Your new session will have the appropriate docker group permissions.
 - If you did everything correctly, the command `docker info` should work and show client and server (containers, running,...) data.  
 ## Container restart script (restart.sh)
-- What does it do and why do we need it? = The script stops my site container, removes it, then pulls the latest version of a new image from Dockerhub, places it in a container and then runs the container. This script is necessary because it reduces how many commands we will need to use to update our images and containers.
-- Where it should be on my instance (server) if someone wanted to use my setup: In my `/home/ubuntu` directory (make sure the directory is public and the script is executable by user `chmod u+x restart.sh`).
+- What does it do and why do we need it? = The script stops my site container, removes it, then pulls the latest version of a new image from Dockerhub. Next, it places the image in a container and then runs it. This script is necessary because it reduces how many commands we will need to use to update our images and containers.
+- Where it should be on my instance (server) if someone wanted to use my setup: My script must be in my `/home/ubuntu` directory for easy access. Make sure the directory is public and the script is executable by user `chmod u+x restart.sh`.
 ## Setting up a `webhook` on the server (branched to different sources when making this block)
 - How to install `adnah's webhook` to server:
   - I use `Ubuntu`, so I must install webhook with the command `sudo apt-get install webhook`.
 - How to start the webhook:
-  - You must first define some hooks you want `webhook` to serve with JSON format.
-  - Create an empty file in `/etc/webhook.conf`. This file will contain an array of hooks `webhook` will serve.
+  - You must first define some hooks you want `webhook` to serve by using the JSON format.
+  - Create an empty file in any directory of your choosing. This file will contain an array of hooks `webhook` will serve.
   - The hooks file should have a line for an `id`, an `execute-command` and a `command-working-directory`.
   - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file!).
   - After you successfully create and save your hook file, run webhook manually using the syntax `sudo webhook -hooks path/to/hook/config/file -verbose` and the instance terminal should be in "listener mode". 
     - Note: If you get a "port already in use" message, run the command `sudo systemctl stop webhook.service`. You can check webhook status with `sudo systemctl status webhook.service` while in another instance terminal. Run the webhook command again to run the listener.
   - The webhook will start up on default port tcp/9000 and will provide you with one HTTP endpoint.
-  - Next, Go to another linux terminal that is outside of the AWS instance and use the command `curl http://yourserverIP:9000/hooks/webhook-file-id`. If successfull,  information should appear on the instance terminal telling the user the webhook has been triggered and `restart.sh` has been activated.
-    - If you are unsuccessful, it is possible another `localhost` is interfering with your container (in my case, it is `nginx`). For me, I must type `sudo apt remove nginx` then `sudo systemctl stop nginx.service` to stop nginx from being the `localhost`. You should now be able to activate the webhook and create and run a container with the curl command.
+  - Next, go to a linux terminal that is outside of the AWS instance and use the command `curl http://yourinstanceIP:9000/hooks/webhook-file-id`. If successfull,  information should appear on the instance terminal telling the user the webhook has been found and `restart.sh` has been activated.
+    - If you are unsuccessful, it is possible another `localhost` is interfering with your container (in my case, it is `nginx`). For me, I must type `sudo apt remove nginx` then `sudo systemctl stop nginx.service` to stop nginx from being the `localhost`. You should now be able to activate the webhook and create & run a container with the curl command.
 ## `webhook` task definition file
 - What does my webhook do? - When you activate the webhook, it will enter listener mode. When the command `curl http://yourserverIP:9000/hooks/webhook-file-id` is invoked on a terminal other than the one containing the webhook, it will invoke the `restart.sh` file. This will stop and remove an existing container and pull and run the latest image as a container named "whatever is specified in `restart.sh`". The webhook will then display the information of what happened when `restart.sh` was invoked so we will know if there were any problems or if we just want to see what is going on.
 - Where it should be on my instance if someone wanted to use my setup: The webhook command that was installed before uses the path to the hook configuration file to run the listener. Therefore, the webhook file should be located in whatever public directory is convenient for the user. 
 ## How to Configure GitHub OR DockerHub to Message the Listener (payloads)
 - GitHub:
-  - Go to settings on your repository.
+  - Go to `settings` on your repository.
   - Go to `Webhooks` under `Code and automation`
   - Click on `add webhook` 
   - Enter your password, if applicable.
@@ -55,10 +57,12 @@
   - Click `add webhook` when you are done.
 - DockerHub:
   - Go to your public repository.
-  - Click on `Webhooks` and fill out the text lines with the appropriate information.
+  - Click on `Webhooks` and fill out the text lines with the webhook name and URL.
   - Click `Create` when finished.
+  - To view history, go to the current webhooks block and press the three-dot column at the upper-right corner of your webhook URL. Select "view history".
+  - You should see the history of the past webhook activiations, but it may take a while to show anything.
 ## Recording of my Workflow Process
-- Used "Debut Video Capture Software"
+- Used "Debut Video Capture Software" to create video
 - Video was >25MB, so I placed it into Pilot Dropbox
 ## Diagram of Continuous Deployment Process.
 - !(image_name)[url]
