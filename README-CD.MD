@@ -59,8 +59,8 @@
   - Go to your public repository.
   - Click on `Webhooks` and fill out the text lines with the webhook name and URL.
   - Click `Create` when finished.
-  - To view history, go to the current webhooks block and press the three-dot column at the upper-right corner of your webhook URL. Select "view history".
-  - You should see the history of the past webhook activiations, but it may take a while to show anything.
+  - To view the delivery history, go to the current webhooks block and press the three-dot column at the upper-right corner of your webhook URL (menu options icon). Select "view history".
+  - You should see the delivery history due past webhook activiations as well as success status, but it may take a while to show anything.
 ## Recording of my Workflow Process
 - Used "Debut Video Capture Software" to create video
 - Video was >25MB, so I placed it into Pilot Dropbox
