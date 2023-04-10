@@ -2,8 +2,8 @@
 - Name: Kevin Iwatsuki
 - Email: iwatsuki.2@wright.edu
 ## CD Project Overview
-- What am I doing? = Learning about continuous deployment to create an image and go live. Also, I am learning about pushing multiple docker images to my DockerHub account with semanitc versioning as well as learning about webhooks and listeners to display a message upon image build completion.
-- Why am I doing it? = Allows us to learn how to create multiple images/websites when a certain event occurs (pushing to GitHub in this case). This is a very efficent process since this is like making a lot of things happen at once with the push of a button. Semantic versioning also allows us to retrieve and save images from previous versions identified by the tags. Also, thanks to webhooks, we will know right away if an image is created without us having to go to our DockerHub repo and check ourselves.
+- What am I doing? = Learning about continuous deployment (CD) by pushing multiple docker images to my DockerHub account with semanitc versioning as a means of updating. Also, we are learning about webhooks and listeners to display messages upon image build/update completion.
+- Why am I doing it? = Semantic versioning allows us to create multiple images/websites when a certain event occurs (pushing to GitHub in this case). It also allows us to retrieve and save images from previous versions identified by the tags. Webhooks will allow us to know right away if an image container is created without us having to go to our DockerHub repo and check ourselves. They make up CD, which is a very efficent process since we can reduce the amount of work required to update a website. 
 - What tools am I using? = DockerHub, GitHub, semantic versioning, webhooks, listeners, WSL2 (Linux), AWS instance(s)
 ## How to generate a `tag` in `git`/GitHub
 - First, you must make a workflow designed to connect to GitHub and add a tag of your choosing (metadata block and a `tags` block under the `push` (action) block).
