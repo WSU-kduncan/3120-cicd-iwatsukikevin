@@ -58,9 +58,9 @@
   - Click on `Webhooks` and fill out the text lines with the appropriate information.
   - Click `Create` when finished.
 ## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
-- Click on `windows key` then `alt` then `R` and hold until recording widget appears.
+- Keyboard: click on `windows key` then `alt` then `R` and hold until recording widget appears.
 - When you are done, click the `stop` icon.
-- Bring up the game menu with `windows key` + `G`.
+- Bring up the game menu with `windows key` + `G` on the keyboard.
 - Click on the `Widget Menu` at the top of the screen and go to `gallery` on the dropdown menu.
 - Your video recording might take a while to load.
 - `link to video here`
