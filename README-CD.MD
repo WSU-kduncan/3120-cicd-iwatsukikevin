@@ -59,6 +59,6 @@
   - Click `Create` when finished.
 ## Recording of my Workflow Process
 - Used "Debut Video Capture Software"
-- `link to video here`
+- Video was >25MB, so I placed it into Pilot Dropbox
 ## Diagram of Continuous Deployment Process.
 - !(image_name)[url]
