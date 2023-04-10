@@ -37,14 +37,14 @@
   - Create an empty file in `/etc/webhook.conf`. This file will contain an array of hooks `webhook` will serve.
   - The hooks file should have a line for an `id`, an `execute-command` and a `command-working-directory`.
   - The `webhooks` will depend on shell scripts, so the `execute-command` line in your hooks file must have a path to your shell script (don't forget to add `#!(whitespace)/bin/sh` at the top of your executable file!).
-  - After you successfully create and save your hook file, run webhook manually using the syntax `sudo webhook -hooks /etc/webhook.conf -verbose` and the instance terminal should be in "listener mode". 
+  - After you successfully create and save your hook file, run webhook manually using the syntax `sudo webhook -hooks path/to/hook/config/file -verbose` and the instance terminal should be in "listener mode". 
     - Note: If you get a "port already in use" message, run the command `sudo systemctl stop webhook.service`. You can check webhook status with `sudo systemctl status webhook.service` while in another instance terminal. Run the webhook command again to run the listener.
   - The webhook will start up on default port tcp/9000 and will provide you with one HTTP endpoint.
   - Next, Go to another linux terminal that is outside of the AWS instance and use the command `curl http://yourserverIP:9000/hooks/webhook-file-id`. If successfull,  information should appear on the instance terminal telling the user the webhook has been triggered and `restart.sh` has been activated.
     - If you are unsuccessful, it is possible another `localhost` is interfering with your container (in my case, it is `nginx`). For me, I must type `sudo apt remove nginx` then `sudo systemctl stop nginx.service` to stop nginx from being the `localhost`. You should now be able to activate the webhook and create and run a container with the curl command.
 ## `webhook` task definition file
 - What does my webhook do? - When you activate the webhook, it will enter listener mode. When the command `curl http://yourserverIP:9000/hooks/webhook-file-id` is invoked on a terminal other than the one containing the webhook, it will invoke the `restart.sh` file. This will stop and remove an existing container and pull and run the latest image as a container named "whatever is specified in `restart.sh`". The webhook will then display the information of what happened when `restart.sh` was invoked so we will know if there were any problems or if we just want to see what is going on.
-- Where it should be on my instance if someone wanted to use my setup: The webhook file should be located in the file `/etc/webhook.conf` because of how the downloaded webhook app is written.
+- Where it should be on my instance if someone wanted to use my setup: The webhook command that was installed before uses the path to the hook configuration file to run the listener. Therefore, the webhook file should be located in whatever public directory is convenient for the user. 
 ## How to Configure GitHub OR DockerHub to Message the Listener (payloads)
 - GitHub:
   - Go to settings on your repository.
