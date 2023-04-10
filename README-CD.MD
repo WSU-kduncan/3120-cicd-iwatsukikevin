@@ -57,12 +57,8 @@
   - Go to your public repository.
   - Click on `Webhooks` and fill out the text lines with the appropriate information.
   - Click `Create` when finished.
-## Recording of my Workflow Process (from `commit and push` TO server getting a fresh image)
-- Keyboard: click on `windows key` then `alt` then `R` and hold until recording widget appears.
-- When you are done, click the `stop` icon.
-- Bring up the game menu with `windows key` + `G` on the keyboard.
-- Click on the `Widget Menu` at the top of the screen and go to `gallery` on the dropdown menu.
-- Your video recording might take a while to load.
+## Recording of my Workflow Process
+- Used "Debut Video Capture Software"
 - `link to video here`
 ## Diagram of Continuous Deployment Process.
 - !(image_name)[url]
