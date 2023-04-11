@@ -19,7 +19,7 @@
 ## Link to my Docker Hub Repo 
 - https://hub.docker.com/repository/docker/iwatsukikevin/kmirepo/general
 ## How to install Docker on an AWS Instance (help from workfall.com)
-- I could not remember how I installed Docker on my instance before, so I used the following steps:
+- I could not remember how I installed Docker on my instance before, so I typed the following steps:
 - First, login to your instance (ssh for me)
 - Update the installed packages and package cache on your instance with `sudo yum update -y`.
 - Install the most recent Docker Engine package with `sudo amazon-linux-extras install docker`.
