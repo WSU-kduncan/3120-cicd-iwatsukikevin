@@ -6,7 +6,7 @@
 - Why am I doing it? = Semantic versioning allows us to create multiple images/websites when a certain event occurs (pushing to GitHub in this case). It also allows us to retrieve and save images from previous versions identified by the tags. Webhooks will allow us to know right away if an image container is created without us having to go to our DockerHub repo and check ourselves. They make up CD, which is a very efficent process since we can reduce the amount of work required to update a website. 
 - What tools am I using? = DockerHub, GitHub, semantic versioning, webhooks, listeners, WSL2 (Linux), AWS instance(s)
 ### Diagram of Continuous Deployment Process.
-- ! (my_CD_diagram)[https://github.com/WSU-kduncan/3120-cicd-iwatsukikevin/blob/main/images/Project%205%20Continuous%20Deployment%20Diagram.PNG]
+- ![my_CD_diagram](https://github.com/WSU-kduncan/3120-cicd-iwatsukikevin/blob/main/images/Project%205%20Continuous%20Deployment%20Diagram.PNG)
 ## How to generate a `tag` in `git`/GitHub
 - First, you must make a workflow designed to connect to GitHub and add a tag of your choosing (metadata block and a `tags` block under the `push` (action) block).
 - Second, you must make sure the local and remote git repositories are synced (particularlly the `workflows` files), otherwise the workflow will not be able to find the Dockerfile.
