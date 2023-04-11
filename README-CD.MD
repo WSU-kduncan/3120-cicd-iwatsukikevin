@@ -57,7 +57,7 @@
   - Click `add webhook` when you are done.
 - DockerHub:
   - Go to your public repository.
-  - Click on `Webhooks` and fill out the text lines with the webhook name and URL.
+  - Click on `Webhooks` and fill out the text lines with the webhook name and a destination webhook URL (where webhook POST requests will be delivered).
   - Click `Create` when finished.
   - To view the delivery history, go to the current webhooks block and press the three-dot column at the upper-right corner of your webhook URL (menu options icon). Select "view history".
   - You should see the delivery history due past webhook activiations as well as success status, but it may take a while to show anything.
