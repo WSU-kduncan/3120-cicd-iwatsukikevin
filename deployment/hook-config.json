@@ -1,7 +1,8 @@
 [
-  {
-    "id": "kev-webhook",
-    "execute-command": "/home/ubuntu/restart.sh",
-    "command-working-directory": "/var/webhook"
-  }
+    {
+      "id": "kev-webhook",
+      "execute-command": "/home/ubuntu/restart.sh",
+      "command-working-directory": "/home/ubuntu",
+      "response-message": "Kevin is doing a thing!!"
+    }
 ]
