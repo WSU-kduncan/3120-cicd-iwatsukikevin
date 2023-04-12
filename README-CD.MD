@@ -50,12 +50,12 @@
 ## `webhook` task definition file
 - What does my webhook do? - When you activate the webhook, it will enter listener mode. Whenever new images with new tags are pushed, this will invoke the `restart.sh` file, which will stop and remove an existing container and pull and run the latest image as a container named "whatever is specified in `restart.sh`". The webhook will then display the information of what happened when `restart.sh` was invoked so we will know if the build was successfull or not.
 - Where it should be on my instance if someone wanted to use my setup: The `webhook` command that was installed before uses the path to the hook configuration file to run the listener. Therefore, the webhook file should be located in whatever public directory is convenient for the user. 
-## How to Configure GitHub OR DockerHub to Message the Listener (payloads)
+## How to Configure DockerHub to Message the Listener
 - DockerHub:
   - Go to your public repository.
   - Click on `Webhooks` and fill out the text lines with the webhook name and a destination webhook URL (where webhook POST requests will be delivered).
   - Click `Create` when finished.
-  - To view the delivery history, go to the current webhooks block and press the three-dot column at the upper-right corner of your webhook URL (menu options icon). Select "view history".
+  - To view the delivery history, go to the current webhooks block and press the three-dot column at the upper-right corner of your webhook URL (menu options icon) and select "view history".
   - You should see the delivery history due past webhook activiations as well as success status, but it may take a while to show anything.
 ## Recording of my Workflow Process
 - Used "Debut Video Capture Software" to create video
