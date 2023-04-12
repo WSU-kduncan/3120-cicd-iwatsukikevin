@@ -2,16 +2,16 @@
 - Name: Kevin Iwatsuki
 - Email: iwatsuki.2@wright.edu
 ## CD Project Overview
-- What am I doing? = Learning about continuous deployment (CD) by pushing multiple docker images to my DockerHub account with semanitc versioning as a means of updating. Also, we are learning about webhooks and listeners to display messages upon image build/update completion.
-- Why am I doing it? = Semantic versioning allows us to create multiple images/websites when a certain event occurs (pushing to GitHub in this case). It also allows us to retrieve and save images from previous versions identified by the tags. Webhooks will allow us to know right away if an image container is created without us having to go to our DockerHub repo and check ourselves. They make up CD, which is a very efficent process since we can reduce the amount of work required to update a website. 
-- What tools am I using? = DockerHub, GitHub, semantic versioning, webhooks, listeners, WSL2 (Linux), AWS instance(s)
+- What am I doing? = Learning about continuous deployment (CD). Pushing multiple docker images to my DockerHub account with semanitc versioning as a means of updating websites. Also, I am learning about webhooks and listeners to display messages upon image build/update completion.
+- Why am I doing it? = Semantic versioning allows me to create multiple images/websites when a certain event occurs (pushing to GitHub in this case). It also allows us to retrieve and save images from previous versions identified by the tags. Webhooks will allow us to know right away if an image container is created without us having to go to our DockerHub repo and check ourselves. These methods make up CD, which is a very efficent process since we can reduce the amount of work required to update a website. 
+- What tools am I using? = DockerHub, GitHub, semantic versioning, webhooks/listeners, WSL2 (Linux), AWS instance(s)
 ### Diagram of Continuous Deployment Process.
 - ![my_CD_diagram](https://github.com/WSU-kduncan/3120-cicd-iwatsukikevin/blob/main/images/Project%205%20Continuous%20Deployment%20Diagram.PNG)
 ## How to generate a `tag` in `git`/GitHub
 - First, you must make a workflow designed to connect to GitHub and add a tag of your choosing (metadata block and a `tags` block under the `push` (action) block).
 - Next use the commands in the following order:
   - `git commit -am "comment"`
-  - `git push`
+  - `git push` (I need to do this because `Buildx` will not find the Dockerfile to build my image otherwise; branch `main` is ahead of origin/main by 1 commit)
   - `git tag -a v*.*.*` where the `*` are your desired version numbers (possible to do because of the workflow tags setup).
   - `git push origin v*.*.*` where the version number is the exact same as the one you used for your "git tag" command.
 - If it worked, you will find the tag number you entered under the tags tab under the branch name in your GitHub main page.
