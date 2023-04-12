@@ -48,16 +48,9 @@
   - Your website should be updated afterwards.
     - Note: If you are unsuccessful, it is possible another `localhost` is interfering with your container (in my case, it is `nginx`). For me, I must type `sudo apt remove nginx` then `sudo systemctl stop nginx.service` to stop nginx from being the `localhost`. You should now be able to activate the webhook and build a container with the git commands mentioned in part 1.
 ## `webhook` task definition file
-- What does my webhook do? - When you activate the webhook, it will enter listener mode. When a new websit is pushed, this will invoke the `restart.sh` file, which will stop and remove an existing container and pull and run the latest image as a container named "whatever is specified in `restart.sh`". The webhook will then display the information of what happened when `restart.sh` was invoked so we will know if there were any problems or if we just want to see what is going on.
-- Where it should be on my instance if someone wanted to use my setup: The webhook command that was installed before uses the path to the hook configuration file to run the listener. Therefore, the webhook file should be located in whatever public directory is convenient for the user. 
+- What does my webhook do? - When you activate the webhook, it will enter listener mode. Whenever new images with new tags are pushed, this will invoke the `restart.sh` file, which will stop and remove an existing container and pull and run the latest image as a container named "whatever is specified in `restart.sh`". The webhook will then display the information of what happened when `restart.sh` was invoked so we will know if the build was successfull or not.
+- Where it should be on my instance if someone wanted to use my setup: The `webhook` command that was installed before uses the path to the hook configuration file to run the listener. Therefore, the webhook file should be located in whatever public directory is convenient for the user. 
 ## How to Configure GitHub OR DockerHub to Message the Listener (payloads)
-- GitHub:
-  - Go to `settings` on your repository.
-  - Go to `Webhooks` under `Code and automation`
-  - Click on `add webhook` 
-  - Enter your password, if applicable.
-  - Fill out the text boxes with the appropriate information and choose the desired settings.
-  - Click `add webhook` when you are done.
 - DockerHub:
   - Go to your public repository.
   - Click on `Webhooks` and fill out the text lines with the webhook name and a destination webhook URL (where webhook POST requests will be delivered).
