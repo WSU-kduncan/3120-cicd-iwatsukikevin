@@ -12,9 +12,9 @@
 - Next use the commands in the following order:
   - `git commit -am "comment"`
   - `git push` (I need to do this because `Buildx` will not find the Dockerfile to build my image otherwise; branch `main` is ahead of origin/main by 1 commit)
-  - `git tag -a v*.*.*` where the `*` are your desired version numbers (possible to do because of the workflow tags setup).
+  - `git tag -a v*.*.*` where the `*`s are your desired version numbers (possible to do because of the workflow tags setup).
   - `git push origin v*.*.*` where the version number is the exact same as the one you used for your "git tag" command.
-- If it worked, you will find the tag number you entered under the tags tab under the branch name in your GitHub main page.
+- If it worked, you will find the tag number you entered under the tags tab under the branch name in your GitHub main page. You will also see a green dot with a checkmark next to your action in the "Actions" page of your GitHub repo/account with your recently-pushed tag.
 ## Behavior of My GitHub Workflow
 - What does the workflow do? = It allows you to build and push multiple docker images to DockerHub based on your tag input + latest version.
 - When does it do it? = It does it when you push your tag to GitHub, but you must follow the instuctions under "How to generate a `tag` in `git`/GitHub" first.
