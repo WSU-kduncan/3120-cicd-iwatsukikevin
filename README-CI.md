@@ -59,7 +59,7 @@
   - Select "Actions" then select "New repository secret"
   - Fill out the boxes (DO NOT copy + paste secret names or else the submission will be denied)
 - What secrets are set for this project?
-  - My DockerHub user name (tagged as DOCKER_USERNAME) and password (tagged as DOCKER_PASSWORD).
+  - My DockerHub user name (tagged as DOCKER_USERNAME) and token password (tagged as DOCKER_PASSWORD).
 ## Behavior of GitHub Workflow
 - What does it do and when?
   - My workflow accesses my DockerHub account using my secrets (dockerhub username and password (token version)), builds an image with my Dockerfile in GitHub, and uploads an image to the designated public repository on DockerHub. 
